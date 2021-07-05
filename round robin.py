@@ -11,4 +11,5 @@ for i in range (teams):
     entry=input("Type in name of team {}: ".format(i+1))
     team_list.append(entry)
     
-print (team_list)
+
+print("Teams you are willing to match: ",*team_list, sep = ", ")
