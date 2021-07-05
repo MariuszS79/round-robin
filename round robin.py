@@ -12,4 +12,7 @@ for i in range (teams):
     team_list.append(entry)
     
 
-print("Teams you are willing to match: ",*team_list, sep = ", ")
+print ("Teams you are willing to match: ",*team_list, sep = ", ")
+random.shuffle(team_list)
+
+
