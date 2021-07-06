@@ -47,16 +47,22 @@ for i in range (teams):
     team_list.append(entry)
     
 
-print ("\nTeams you are willing to match: ",*team_list, sep = ", ")
+print ("\nTeams you are willing to match: ", ", ".join(team_list))
 random.shuffle(team_list)
 print (len(team_list), "teams in total")
-matches=(len(team_list)//2)*((len(team_list))-1)
+if teams%2==0:
+  matches=(len(team_list)//2)*((len(team_list))-1)
+else: 
+  matches=
+
+
 if matches==1:
-    print ("It will be",matches,"match only")
+    print ("It will be one match only")
 else: 
     print ("It will be",matches,"matches in total")
 print("\n----------")
 print("Fixtures are: \n")
     
 pick_teams(team_list)
+
 
