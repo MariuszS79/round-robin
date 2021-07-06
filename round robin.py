@@ -12,6 +12,12 @@ for i in range (teams):
     team_list.append(entry)
     
 
-print ("Teams you are willing to match: ",*team_list, sep = ", ")
+print ("\nTeams you are willing to match: ",*team_list, sep = ", ")
 random.shuffle(team_list)
-print (len(team_list), " teams in total")
+print (len(team_list), "teams in total")
+matches=(len(team_list)//2)*((len(team_list))-1)
+if matches==1:
+    print ("It will be",matches,"match only")
+else: 
+    print ("It will be",matches,"matches in total")
+    
