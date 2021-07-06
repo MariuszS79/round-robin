@@ -14,5 +14,4 @@ for i in range (teams):
 
 print ("Teams you are willing to match: ",*team_list, sep = ", ")
 random.shuffle(team_list)
-
-
+print (len(team_list), " teams in total")
