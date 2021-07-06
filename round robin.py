@@ -7,12 +7,38 @@ team_list=[]
 team_count=0
 round=0
 
-def pick_teams(teams):
-    if len(teams) % 2 == 0:
-        pick_even(team_list)
+def pick_teams(team_list):
+    if teams % 2 == 0:
+        even(team_list)
     else:
-        pick_odd(team_list)
-
+        odd(team_list)
+        
+def even(team_list):
+    games = []
+    half_list = int(len(team_list)/2)
+    team1 = [i+1 for i in range(half_list)]
+    team2 = [i+1 for i in range(half_list, len(team_list))][::-1]
+    for i in range(len(team_list)-1):
+        team1.insert(1, team2.pop(0))
+        team2.append(team1.pop())
+        for t in zip(team1, team2):
+            games.append((team_list[t[0]-1], team_list[t[1]-1]))
+    for x in games:
+      print (*x, sep=" - ")
+      
+def odd(team_list):
+    games = []
+    half_list = int((len(team_list)+1)/2)
+    team1 = [i+1 for i in range(half_list)]
+    team2 = [i+1 for i in range(half_list, len(team_list)+1)][::-1]
+    for i in range(len(team_list)):
+        team1.insert(1, team2.pop(0))
+        team2.append(team1.pop())
+        for t in zip(team1, team2):
+            if len(team_list)+1 not in t:
+                games.append((team_list[t[0]-1], team_list[t[1]-1]))
+    for x in games:
+      print (*x, sep=" - ")
 
 
 for i in range (teams):
@@ -30,6 +56,7 @@ if matches==1:
 else: 
     print ("It will be",matches,"matches in total")
 print("\n----------")
+print("Fixtures are: \n")
     
-
+pick_teams(team_list)
 
