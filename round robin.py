@@ -20,5 +20,5 @@ if matches==1:
     print ("It will be",matches,"match only")
 else: 
     print ("It will be",matches,"matches in total")
-print(\n"----------")
+print("\n----------")
     
