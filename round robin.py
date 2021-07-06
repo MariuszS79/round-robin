@@ -5,7 +5,7 @@ print("Welcome to my round robin app")
 teams=int(input("How many teams are there?: "))
 team_list=[]
 team_count=0
-round=0
+games=[]
 
 def pick_teams(team_list):
     if teams % 2 == 0:
@@ -25,8 +25,9 @@ def even(team_list):
             games.append((team_list[t[0]-1], team_list[t[1]-1]))
     for x in games:
       print (*x, sep=" - ")
-      
+   
 def odd(team_list):
+    global matchcount
     games = []
     half_list = int((len(team_list)+1)/2)
     team1 = [i+1 for i in range(half_list)]
@@ -47,22 +48,22 @@ for i in range (teams):
     team_list.append(entry)
     
 
-print ("\nTeams you are willing to match: ", ", ".join(team_list))
+print ("\nTeams you are willing to match: ", ", ".join(team_list),end=".\n")
 random.shuffle(team_list)
-print (len(team_list), "teams in total")
+print (len(team_list), "teams in total.")
 if teams%2==0:
+  global matches
   matches=(len(team_list)//2)*((len(team_list))-1)
 else: 
-  matches=(len(team_list)-1//2)
+  matches=((len(team_list)-1)*(len(team_list))//2)
 
 
 if matches==1:
-    print ("It will be one match only")
+    print ("It will be one match only.")
 else: 
-    print ("It will be",matches,"matches in total")
+    print ("It will be",matches,"matches in total.")
 print("\n----------")
 print("Fixtures are: \n")
     
 pick_teams(team_list)
-
 
