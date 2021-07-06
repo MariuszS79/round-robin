@@ -5,6 +5,15 @@ print("Welcome to my round robin app")
 teams=int(input("How many teams are there?: "))
 team_list=[]
 team_count=0
+round=0
+
+def pick_teams(teams):
+    if len(teams) % 2 == 0:
+        pick_even(team_list)
+    else:
+        pick_odd(team_list)
+
+
 
 for i in range (teams):
     team_count+=1
@@ -22,3 +31,5 @@ else:
     print ("It will be",matches,"matches in total")
 print("\n----------")
     
+
+
