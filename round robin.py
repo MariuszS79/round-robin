@@ -53,7 +53,7 @@ print (len(team_list), "teams in total")
 if teams%2==0:
   matches=(len(team_list)//2)*((len(team_list))-1)
 else: 
-  matches=
+  matches=(len(team_list)-1//2)
 
 
 if matches==1:
